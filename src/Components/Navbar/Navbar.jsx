@@ -47,7 +47,11 @@ const Navbar = () => {
         {/* Right side: cart + CTA + hamburger */}
         <div className="navbar__actions">
           <a href="#" className="navbar__cart">
-            <img src={homeGreenIcon} alt="cart" />
+          <img
+  src={homeGreenIcon}
+  alt="cart"
+  style={{ "--cart-icon-url": `url(${homeGreenIcon})` }}
+/>
             <span className="navbar__cart-count">0</span>
           </a>
 
