@@ -1,6 +1,8 @@
 import "./App.css";
+import "./styles/Hovers.css";
 import { AuthProvider } from "./context/AuthContext";
 import AuthGate from "./Components/Auth/AuthGate";
+import Reveal from "./Components/Reveal/Reveal";
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import Welcome from "./Components/Welcome/Welcome";
@@ -20,15 +22,15 @@ function App() {
         <div className="app">
           <Navbar />
           <Hero />
-          <Welcome />
-          <Products />
-          <Gallery />
-          <Popular />
-          <Special />
-          <Blog />
-          <Instagram />
-          <Subscribe />
-          <Footer />
+          <Reveal direction="up"><Welcome /></Reveal>
+          <Reveal direction="up"><Products /></Reveal>
+          <Reveal direction="left"><Gallery /></Reveal>
+          <Reveal direction="up"><Popular /></Reveal>
+          <Reveal direction="fade"><Special /></Reveal>
+          <Reveal direction="up"><Blog /></Reveal>
+          <Reveal direction="up"><Instagram /></Reveal>
+          <Reveal direction="up"><Subscribe /></Reveal>
+          <Reveal direction="fade"><Footer /></Reveal>
         </div>
       </AuthGate>
     </AuthProvider>

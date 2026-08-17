@@ -3,9 +3,7 @@ import fryShape from "../../assets/subscribe/fry-shape.png";
 import chocolateShape from "../../assets/subscribe/chocolate-shape.png";
 import icecreamShape from "../../assets/subscribe/icecream-shape.png";
 import whiteGradient from "../../assets/subscribe/white-gradient.png";
-
-const SUBSCRIBE_BG_URL =
-  "https://images.unsplash.com/photo-1606149059549-6042addafc5a?fm=jpg&q=80&w=1600&auto=format&fit=crop";
+import backgroundImage from "../../assets/subscribe/background-image.png";
 
 const Subscribe = () => {
   return (
@@ -13,7 +11,7 @@ const Subscribe = () => {
       <div className="subscribe__container">
         <img
           className="subscribe__bg-image"
-          src={SUBSCRIBE_BG_URL}
+          src={backgroundImage}
           alt=""
         />
         <img
