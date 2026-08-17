@@ -1,0 +1,200 @@
+/* ============================================
+   HERO — final, consolidated
+   - Frame: min-height 897.69px (confirmed from Figma export panel)
+   - Background: #E32227 (confirmed true red, not the earlier #EF294C)
+   - Heading: Oswald 600, 150px / 157.5px line-height, 635.61×472.5px box, uppercase, white
+   - Content: shifted right via padding-left: 12% on .hero__container
+   - Pepper: positioned relative to the heading's own rendered edge (inside
+     .hero__title, after "Awesome"), not a % of container — so it tracks the
+     actual text corner at any screen width instead of drifting
+   - Slide counter (2 —— /3): present, matches reference image
+   - No pizza image, no 3D cube — not in the target design
+   ============================================ */
+
+.hero {
+  position: relative;
+  background: #E32227;
+  overflow: hidden;
+  width: 100%;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+}
+
+.hero__decor {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__decor--left {
+  top: 22%;
+  left: 3%;
+  width: 90px;
+}
+
+.hero__decor--bottom-left {
+  bottom: 12%;
+  left: 2.5%;
+  width: 60px;
+}
+
+.hero__pizza-img {
+  position: absolute;
+  right: 1%;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 42%;
+  max-width: 720px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding-left: 12%;
+}
+
+/* ---------- Heading ---------- */
+.hero__title {
+  position: relative; /* anchors .hero__pepper to the text's own box */
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 150px;
+  line-height: 157.5px;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  width: 635.61px;
+  max-width: 100%;
+  height: 472.5px;
+  margin-bottom: 24px;
+}
+
+/* Pepper — sits at the end of "Awesome" (first line), tracks the text's
+   actual rendered width instead of a container percentage */
+.hero__pepper {
+  position: absolute;
+  top: -18px;
+  left: calc(100% + 4px);
+  width: 55px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------- Subtitle ---------- */
+.hero__subtitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--color-white);
+  margin-bottom: 28px;
+}
+
+/* ---------- Order Now button ---------- */
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 32px;
+  background: var(--color-yellow);
+  color: var(--color-dark);
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-bottom: 32px;
+}
+
+.hero__btn:hover {
+  filter: brightness(0.94);
+}
+
+/* ---------- Slider indicator (2 —— /3) ---------- */
+.hero__slider-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero__slide-num {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-white);
+}
+
+.hero__slide-line {
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hero__slide-total {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .hero__container {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .hero__title {
+    width: 100%;
+    height: auto;
+    font-size: clamp(38px, 10vw, 100px);
+    line-height: 1.05;
+  }
+
+  .hero__pepper {
+    width: 40px;
+    top: -12px;
+  }
+
+  .hero__decor--left,
+  .hero__decor--bottom-left {
+    width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: clamp(30px, 11vw, 56px);
+  }
+
+  .hero__subtitle {
+    font-size: 17px;
+  }
+
+  .hero__btn {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+
+  .hero__pepper {
+    width: 32px;
+    top: -8px;
+  }
+}

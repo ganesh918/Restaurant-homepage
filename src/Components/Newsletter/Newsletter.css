@@ -1,0 +1,157 @@
+/* ============================================
+   BLOG ("Explore News & Blog")
+   Confirmed from Figma:
+   - Card title: Oswald 600 SemiBold, 24px / line-height 31.2px, color #212121, title case
+   - Card image: 414px × 240px
+   - Eyebrow "NEWS & BLOG": red/pink accent color (matches category label color)
+   - 3-column grid, white background
+   ============================================ */
+
+.blog {
+  background: var(--color-white);
+  padding: 80px 0;
+}
+
+.blog__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.blog__eyebrow {
+  display: flex;
+  align-items: center;               /* vertical alignment: middle */
+  justify-content: center;
+  width: 100%;
+  max-width: 93.56px;
+  height: 28px;
+  margin: 0 auto 10px;
+  font-family: var(--font-heading); /* Oswald */
+  font-weight: 700;                  /* Bold */
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;                /* horizontal align: center */
+  text-transform: capitalize;        /* Title case */
+  color: #EF294C;
+}
+
+.blog__heading {
+  display: flex;
+  align-items: center;               /* vertical alignment: middle */
+  justify-content: center;
+  width: 100%;
+  max-width: 494.8px;
+  min-height: 67.2px;
+  margin: 0 auto 50px;
+  font-family: var(--font-heading); /* Oswald */
+  font-weight: 700;                  /* Bold */
+  font-size: clamp(28px, 6vw, 60px);
+  line-height: 1.12;                 /* ratio equivalent to 67.2px at 60px */
+  letter-spacing: 0%;
+  text-align: center;                /* horizontal align: center */
+  text-transform: capitalize;        /* Title case */
+  color: #212121;
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: left;
+}
+
+.blog__card {
+  width: 100%;
+  max-width: 414px;
+  min-height: 482.56px;
+  background: #F7F7F7;
+}
+
+.blog__img {
+  display: block;
+  width: 100%;
+  max-width: 414px;
+  height: 240px;
+  object-fit: cover; /* matches Figma's "Scale: Crop" */
+}
+
+.blog__meta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 20px 16px;
+}
+
+.blog__meta::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  height: 2px;
+  background: #2FBF71;
+}
+
+.blog__category {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  color: #EF294C;
+}
+
+.blog__date {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-gray);
+}
+
+/* Confirmed: Oswald 600 SemiBold, 24px / 31.2px line-height, #212121 */
+.blog__title {
+  font-family: var(--font-heading); /* Oswald */
+  font-weight: 600;                  /* SemiBold */
+  font-size: 24px;
+  line-height: 31.2px;
+  letter-spacing: 0%;
+  text-transform: capitalize;        /* Title case */
+  color: #212121;
+  width: 100%;
+  max-width: 328.54px;
+  min-height: 93.6px;
+  display: flex;
+  align-items: center;               /* vertical alignment: middle */
+  padding: 16px 20px 24px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .blog {
+    padding: 60px 0;
+  }
+
+  .blog__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blog__title {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 700px) {
+  .blog__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .blog__heading {
+    margin-bottom: 32px;
+  }
+}

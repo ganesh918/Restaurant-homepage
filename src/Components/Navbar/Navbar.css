@@ -1,0 +1,235 @@
+/* ============================================
+   NAVBAR
+   Confirmed from Figma:
+   - Nav link font: Oswald 500 (Medium), 18px, line-height 28px, color #212121, title case
+   - Contact Us button: Oswald 600 (SemiBold), 17px, line-height 17px, letter-spacing 0.8px,
+     color #FFFFFF, center aligned, title case
+   - Contact Us button fill: #FFC222, radius 7px, width 181.91px, height 57px
+   - Cart basket icon: #00A149 (green)
+   - Cart badge "0": Oswald 500, 12px, white text
+   - Hamburger icon: tapered 3-line shape (100% / 70% / 40% widths), always visible
+     next to Contact Us button at every breakpoint — not a mobile-only toggle icon
+   ============================================ */
+
+.navbar {
+  width: 100%;
+  background: var(--color-white);
+  position: relative;
+  z-index: 100;
+}
+
+.navbar__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* ---------- Logo ---------- */
+.navbar__logo img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ---------- Nav links ---------- */
+.navbar__links ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-dark);
+  text-transform: capitalize;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar__link:hover {
+  color: var(--color-red);
+}
+
+.navbar__caret {
+  margin-top: 2px;
+  color: var(--color-gray);
+  transition: transform 0.2s ease;
+}
+
+.navbar__item:hover .navbar__caret {
+  transform: rotate(180deg);
+}
+
+/* ---------- Right actions ---------- */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar__cart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__cart img {
+  width: 22px;
+  height: 22px;
+  filter: invert(31%) sepia(84%) saturate(1226%) hue-rotate(122deg) brightness(94%) contrast(101%);
+}
+
+.navbar__cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 182px;
+  height: 57px;
+  padding: 0 28px;
+  background: var(--color-yellow);
+  color: var(--color-white);
+  border-radius: 7px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 17px;
+  letter-spacing: 0.8px;
+  text-transform: capitalize;
+  text-align: center;
+  transition: filter 0.2s ease;
+}
+
+.navbar__cta:hover {
+  filter: brightness(0.94);
+}
+
+/* ---------- Hamburger — tapered lines, always visible ---------- */
+.navbar__hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.navbar__hamburger svg line {
+  transition: stroke 0.2s ease;
+}
+
+.navbar__hamburger:hover svg line {
+  stroke: var(--color-red);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar__links ul {
+    gap: 20px;
+  }
+
+  .navbar__link {
+    font-size: 16px;
+  }
+
+  .navbar__cta {
+    min-width: 150px;
+    height: 48px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile — nav links collapse into drawer; hamburger stays visible and now
+   also opens/closes that drawer via the existing onClick handler */
+@media (max-width: 860px) {
+  .navbar__container {
+    padding: 16px 20px;
+  }
+
+  .navbar__logo img {
+    height: 36px;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(320px, 80vw);
+    height: 100vh;
+    background: var(--color-white);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+    padding: 90px 24px 24px;
+    transition: right 0.35s ease;
+    z-index: 200;
+  }
+
+  .navbar__links--open {
+    right: 0;
+  }
+
+  .navbar__links ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .navbar__item {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navbar__link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 4px;
+    font-size: 17px;
+  }
+
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__hamburger--open {
+    position: relative;
+    z-index: 201;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__cart img {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ===== COLORS (confirmed from Figma inspect panel) ===== */
+  --color-red: #EF294C;          /* hero + products band background, confirmed */
+  --color-yellow: #FFC222;       /* buttons + eyebrow text, confirmed */
+  --color-dark: #212121;         /* body/nav text, confirmed */
+  --color-gray: #5C5C5B;         /* muted icon/text, confirmed */
+  --color-green: #00A149;        /* cart icon, confirmed */
+  --color-white: #FFFFFF;
+  --color-off-white: #FDFBF7;    /* welcome section bg — still unconfirmed, looks white/off-white */
+
+  /* ===== FONTS ===== */
+  --font-heading: 'Oswald', sans-serif;   /* confirmed: nav links, headings use Oswald */
+  --font-body: 'Jost', sans-serif;        /* ASSUMED — CONFIRM body font from Figma */
+
+  /* ===== LAYOUT ===== */
+  --container-width: 1920px;      /* confirmed from Figma frame width */
+  --container-max: 1320px;        /* content max-width, CONFIRM — typical for 1920 frame w/ padding */
+  --navbar-height: 97.69px;       /* derived: hero top area before red section */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-white);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+html, body {
+  overflow-x: auto;
+}
+
+/* Hide the horizontal scrollbar visually while keeping the scroll functional */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  height: 0px; /* Chrome, Safari, Edge (Chromium) */
+  background: transparent;
+}
+
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/legacy Edge */
+}

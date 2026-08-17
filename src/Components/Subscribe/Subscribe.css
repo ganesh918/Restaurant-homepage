@@ -1,0 +1,277 @@
+/* ============================================
+   SUBSCRIBE (newsletter banner)
+   ============================================ */
+
+.subscribe {
+  background: var(--color-white);
+  padding: 60px 0;
+  margin-top: 250px;
+  text-align: center;
+}
+
+.subscribe__container {
+  max-width: 1290px;
+  width: 100%;
+  height: 407.78px;
+  box-sizing: border-box; /* ensures padding is included within the 407.78px, not added on top */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 70px 70px 110px;
+  opacity: 1;
+  transform: rotate(0deg); /* angle: 0deg */
+  position: relative;
+  overflow: hidden;
+  background: #F4F1EA;
+}
+
+/* Background photo */
+.subscribe__bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* White fade overlay (exported from Figma) */
+.subscribe__gradient-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Decorative food icons (fry, chocolate, ice cream) */
+.subscribe__deco {
+  position: absolute;
+  width: 46px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.subscribe__deco--fry {
+  position: absolute;
+  width: 42px;
+  height: 55px;
+  top: 40px;
+  left: 187px;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.subscribe__deco--chocolate {
+  position: absolute;
+  width: 98px;
+  height: 71px;
+  top: 55px;
+  left: 774px;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.subscribe__deco--icecream {
+  position: absolute;
+  width: 67px;
+  height: 77px;
+  top: 10px;
+  left: 1183px;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Left / right content columns */
+.subscribe__left,
+.subscribe__right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe__heading {
+  font-family: var(--font-heading); /* Oswald */
+  font-weight: 700;                  /* Bold */
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.3;                  /* ratio equivalent to 62.4px at 48px */
+  letter-spacing: 0%;
+  text-transform: capitalize;        /* Title case */
+  color: #212121;
+  width: 100%;
+  max-width: 498.26px;
+  min-height: 124.8px;
+  display: flex;
+  align-items: center;               /* vertical alignment: middle */
+  margin-bottom: 20px;
+}
+
+.subscribe__text {
+  font-family: var(--font-heading); /* Oswald — was var(--font-body), see note below */
+  font-weight: 400;                  /* Regular */
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: #5C5C5B;
+  width: 100%;
+  max-width: 458.31px;
+  min-height: 56px;
+  display: flex;
+  align-items: center;               /* vertical alignment: middle */
+}
+
+.subscribe__right {
+  min-width: 340px;
+}
+
+.subscribe__input-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 440.16px;
+  height: 68px;
+  opacity: 1;
+  transform: rotate(0deg); /* angle: 0deg */
+  margin-bottom: 20px;
+}
+
+
+.subscribe__input-icon {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  color: #6b6b6b;
+}
+
+.subscribe__input {
+  width: 100%;
+  height: 100%;
+  padding: 0 24px 0 54px;
+  border: none;
+  background: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-dark);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.subscribe__input::placeholder {
+  font-family: var(--font-heading); /* Oswald */
+  font-weight: 400;                  /* Regular */
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: capitalize;        /* Title case */
+  color: #757575;
+}
+
+/* Cross-browser fallbacks — some browsers require vendor-prefixed
+   placeholder selectors instead of the standard ::placeholder */
+.subscribe__input::-webkit-input-placeholder {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 16px;
+  color: #757575;
+}
+
+.subscribe__input::-moz-placeholder {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 16px;
+  color: #757575;
+  opacity: 1; /* Firefox adds opacity: 0.54 by default to placeholders */
+}
+.subscribe__btn {
+  width: 209.13px;
+  max-width: 100%;
+  height: 57px;
+  border: none;
+  background: var(--color-yellow);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.subscribe__btn:hover {
+  filter: brightness(0.94);
+}
+
+.subscribe__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+.subscribe__checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--color-yellow);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.subscribe__checkbox a {
+  color: var(--color-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 860px) {
+  .subscribe__container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px 90px;
+  }
+
+  .subscribe__text {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .subscribe__right {
+    width: 100%;
+  }
+
+  .subscribe__deco {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscribe {
+    padding: 40px 0;
+  }
+
+  .subscribe__container {
+    padding: 32px 20px 70px;
+  }
+
+  .subscribe__heading {
+    font-size: 26px;
+  }
+}

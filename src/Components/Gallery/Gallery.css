@@ -1,0 +1,160 @@
+/* ============================================
+   DEAL OF THE DAY (ribs image + yellow text panel)
+   Estimated from screenshots (no direct inspect panel captured for this section's
+   text/colors, but layout is clearly 2-column: image left, yellow panel right,
+   roughly 60/40 split matching screenshot proportions)
+   ============================================ */
+
+.deal {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  min-height: 480px;
+  margin-bottom: 60px;
+}
+
+.deal__img-wrap {
+  position: relative;
+}
+
+.deal__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deal__nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.deal__nav-btn {
+  width: 32px;
+  height: 32px;
+  background: var(--color-yellow);
+  color: var(--color-dark);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deal__nav-btn:last-child {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.deal__content {
+  background: var(--color-yellow);
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.deal__eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.deal__heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 67.2px;
+  letter-spacing: 0%;
+  color: var(--color-white);
+  width: 398.78px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.deal__price {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+.deal__price-num {
+  font-weight: 700;
+  font-size: 28px;
+  margin-left: 6px;
+}
+
+.deal__text {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: var(--color-white);
+  width: 435.39px;
+  max-width: 100%;
+  margin-bottom: 28px;
+}
+
+.deal__link svg {
+  flex-shrink: 0;
+  color: var(--color-white);
+}
+
+.deal__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.deal__link-icon {
+  flex-shrink: 0;
+  color: var(--color-white);
+}
+
+.deal__link-text {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 17px;
+  letter-spacing: 0.8px;
+  color: var(--color-white);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .deal {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .deal__img-wrap {
+    height: 320px;
+  }
+
+  .deal__content {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .deal__img-wrap {
+    height: 240px;
+  }
+
+  .deal__content {
+    padding: 32px 20px;
+  }
+
+  .deal__heading {
+    font-size: 26px;
+  }
+}
