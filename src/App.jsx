@@ -1,4 +1,6 @@
 import "./App.css";
+import { AuthProvider } from "./context/AuthContext";
+import AuthGate from "./Components/Auth/AuthGate";
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import Welcome from "./Components/Welcome/Welcome";
@@ -13,19 +15,23 @@ import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Hero />
-      <Welcome />
-      <Products />
-      <Gallery />
-      <Popular />
-      <Special />
-      <Blog />
-      <Instagram />
-      <Subscribe />
-      <Footer />
-    </div>
+    <AuthProvider>
+      <AuthGate>
+        <div className="app">
+          <Navbar />
+          <Hero />
+          <Welcome />
+          <Products />
+          <Gallery />
+          <Popular />
+          <Special />
+          <Blog />
+          <Instagram />
+          <Subscribe />
+          <Footer />
+        </div>
+      </AuthGate>
+    </AuthProvider>
   );
 }
 
