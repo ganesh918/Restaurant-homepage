@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Navbar.css";
 import homeLogo from "../../assets/navbar/homeLogo.png";
 import homeGreenIcon from "../../assets/navbar/homeGreenIcon.png";
+import { useAuth } from "../../context/AuthContext";
 
 const NAV_LINKS = [
   { label: "Home", href: "#", dropdown: true },
@@ -14,6 +15,7 @@ const NAV_LINKS = [
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { logout } = useAuth();
 
   return (
     <header className="navbar">
@@ -44,14 +46,14 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* Right side: cart + CTA + hamburger */}
+        {/* Right side: cart + CTA + hamburger + logout */}
         <div className="navbar__actions">
           <a href="#" className="navbar__cart">
-          <img
-  src={homeGreenIcon}
-  alt="cart"
-  style={{ "--cart-icon-url": `url(${homeGreenIcon})` }}
-/>
+            <img
+              src={homeGreenIcon}
+              alt="cart"
+              style={{ "--cart-icon-url": `url(${homeGreenIcon})` }}
+            />
             <span className="navbar__cart-count">0</span>
           </a>
 
@@ -65,10 +67,18 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             <svg width="28" height="18" viewBox="0 0 28 18" fill="none">
-  <line x1="16" y1="1" x2="28" y2="1" stroke="#212121" strokeWidth="2" strokeLinecap="round" />
-  <line x1="0" y1="9" x2="28" y2="9" stroke="#212121" strokeWidth="2" strokeLinecap="round" />
-  <line x1="0" y1="17" x2="12" y2="17" stroke="#212121" strokeWidth="2" strokeLinecap="round" />
-</svg>
+              <line x1="16" y1="1" x2="28" y2="1" stroke="#212121" strokeWidth="2" strokeLinecap="round" />
+              <line x1="0" y1="9" x2="28" y2="9" stroke="#212121" strokeWidth="2" strokeLinecap="round" />
+              <line x1="0" y1="17" x2="12" y2="17" stroke="#212121" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+
+          <button className="navbar__logout" onClick={logout} aria-label="Log out">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M16 17l5-5-5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M21 12H9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </button>
         </div>
       </div>

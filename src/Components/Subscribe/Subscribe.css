@@ -277,3 +277,15 @@
     font-size: 26px;
   }
 }
+
+
+
+.subscribe__btn { transition: filter 0.2s ease, transform 0.2s var(--ease-snap); }
+.subscribe__btn:hover { transform: translateY(-2px); }
+.subscribe__btn:active { transform: translateY(0) scale(0.97); }
+
+.subscribe__input { transition: box-shadow 0.2s ease; }
+.subscribe__input:focus { box-shadow: 0 0 0 3px rgba(255, 194, 34, 0.35); outline: none; }
+
+.subscribe__checkbox input[type="checkbox"] { transition: transform 0.15s ease; }
+.subscribe__checkbox:hover input[type="checkbox"] { transform: scale(1.15); }

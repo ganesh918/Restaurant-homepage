@@ -179,3 +179,10 @@
     margin-top: 32px; /* was 100px — removes the huge dead-space gap */
   }
 }
+
+
+
+.special__dot { transition: width 0.25s ease, background 0.2s ease, transform 0.2s ease; cursor: pointer; }
+.special__dot:hover { transform: scale(1.3); }
+
+.special__author-name { transition: color 0.2s ease; }

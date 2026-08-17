@@ -242,3 +242,43 @@
     height: 20px;
   }
 }
+
+
+
+.navbar__link { transition: color 0.2s ease, transform 0.2s ease; }
+.navbar__link:hover { transform: translateY(-1px); }
+
+.navbar__cta { transition: filter 0.2s ease, transform 0.2s var(--ease-snap); }
+.navbar__cta:hover { transform: translateY(-2px); }
+.navbar__cta:active { transform: translateY(0) scale(0.97); }
+
+.navbar__cart { transition: transform 0.2s var(--ease-snap); }
+.navbar__cart:hover { transform: scale(1.12); }
+.navbar__cart:active { transform: scale(0.95); }
+
+.navbar__hamburger { transition: transform 0.2s ease; }
+.navbar__hamburger:active { transform: scale(0.9); }
+
+
+.navbar__logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #212121;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s var(--ease-snap, ease);
+}
+
+.navbar__logout:hover {
+  color: #E32227;
+  transform: scale(1.1);
+}
+
+.navbar__logout:active {
+  transform: scale(0.9);
+}
