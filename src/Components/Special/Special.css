@@ -139,23 +139,43 @@
   }
 
   .special__heading {
-    font-size: clamp(24px, 7vw, 36px);
+    font-size: clamp(20px, 6vw, 36px);
+    line-height: 1.3;
+    white-space: normal; /* confirms the fix — must be present or the heading keeps clipping */
     margin-bottom: 40px;
     padding: 0 12px;
   }
 
-  .special__text {
-    font-size: 24px;
-    line-height: 1.4;
-  }
-}
-
-@media (max-width: 480px) {
-  .special__text {
-    font-size: 20px;
+  .special__star-img {
+    width: clamp(12px, 3vw, 40px);
   }
 
   .special__container {
-    padding: 0 16px;
+    padding: 0 20px;
+  }
+
+  .special__meta-row {
+    margin-left: 0; /* was 40px — no room to indent on mobile */
+  }
+
+  .special__text {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .special__author {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-left: 0;   /* was 110px — removes the awkward push-right */
+    margin-top: 24px; /* was 40px */
+  }
+
+  .special__author-title {
+    font-size: 14px;
+  }
+
+  .special__dots {
+    margin-top: 32px; /* was 100px — removes the huge dead-space gap */
   }
 }

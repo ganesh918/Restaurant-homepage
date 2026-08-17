@@ -335,6 +335,10 @@
     width: 100%;
     grid-column: 1 / -1;
   }
+
+  .footer__deco {
+    display: none; /* prevents large decor images from overlapping link columns on tablet/mobile */
+  }
 }
 
 @media (max-width: 768px) {
@@ -377,10 +381,6 @@
   }
 
   .footer__main {
-    padding: 40px 0 0;
-  }
-
-  .footer__deco {
-    width: 120px;
+    padding: 40px 0;
   }
 }

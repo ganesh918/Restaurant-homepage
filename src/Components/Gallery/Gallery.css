@@ -143,6 +143,20 @@
   .deal__content {
     padding: 40px 30px;
   }
+
+  .deal__heading {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(32px, 8vw, 60px);
+    line-height: 1.15;
+  }
+
+  .deal__text {
+    width: 100%;
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.5;
+  }
 }
 
 @media (max-width: 480px) {
@@ -156,5 +170,36 @@
 
   .deal__heading {
     font-size: 26px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .deal__eyebrow {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .deal__price {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .deal__price-num {
+    font-size: 24px;
+  }
+
+  .deal__text {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .deal__link-text {
+    font-size: 15px;
+  }
+
+  .deal__link-icon {
+    width: 20px;
+    height: auto;
   }
 }
